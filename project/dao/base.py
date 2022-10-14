@@ -1,4 +1,4 @@
-from typing import Generic, List, Optional, TypeVar
+from typing import Generic, List, Optional, TypeVar, Union
 
 from flask import current_app
 from flask_sqlalchemy import BaseQuery
@@ -30,3 +30,6 @@ class BaseDAO(Generic[T]):
             except NotFound:
                 return []
         return stmt.all()
+
+    def get_all_order_by(self, filter: Optional[str], page: Optional[int] = None) -> List[T]:
+        ...
