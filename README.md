@@ -1,25 +1,25 @@
-# Исходный код для курсовой работы №3
+# REST Api of cinema portal
 
-## Описание проекта
-- Установка зависимостей
-```shell
+## Prepare database for a project
+- Install requirements
+```
 pip install -r requirements.txt
 
 pip install -r requirements.dev.txt
 ```
 
-- Создание моделей (очистит БД и создаст все модели, указанные в импорте)
-```shell
+- Create models
+```
 python create_tables.py
 ```
 
-- Загрузка данных в базу
-```shell
+- Upload data to database
+```
 python load_fixture.py
 ```
-Скрпит читает файл fixtures.json и загружает данные в базу. Если данные уже загружены - выводит соответсвующее сообщение. 
+Script reads fixtures.json and uploads data to database. If the data has already been uploaded - return message. 
 
-## Запуск проекта
+## Running a project
 
 ### Bash (Linux/MACOS)
 ```shell
@@ -42,7 +42,7 @@ $env:FLASK_ENV = "development"
 flask run
 ```
 
-## Запуск тестов
+## Running unit tests
 ```shell
 pytest .
 ```
